@@ -8,9 +8,17 @@ document.getElementById('formularioRegistro').addEventListener('submit', functio
     const cupo = document.getElementById('cupo').value.trim();
 
     // Validar que los campos no estén vacíos
-    if (!nombre || !cuenta || !charla) {
-        alert('Todos los campos son obligatorios');
-        return;
+    if (!nombre || !cuenta || charla == "00" || cupo == "00") {
+        //alert('Todos los campos son obligatorios');
+        if (charla == "00") {
+            alert('Seleccione una charla');
+            return;
+        }
+        if (cupo == "00") {
+            alert('Seleccione un cupo');
+            return;
+        }
+        
         //agreguen los campos que hacen falta
     }
 

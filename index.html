@@ -52,18 +52,17 @@
                     <h2 class="text-center mb-4">Registro de Panelistas | Ciclo de Charlas | 2025</h2>
                 </div>
                 <form id="formularioRegistro" class="bg-white p-4 rounded shadow-sm">
-                    <!-- Campos del formulario, pueden ver que el type cambia -->
                     <div class="row">
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label for="nombre" class="form-label fs-5">Nombre Completo</label>
-                                <input type="text" class="form-control" id="nombre" required>
+                                <input type="text" class="form-control" id="nombre" required placeholder="Jose Antonio">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label for="cuenta" class="form-label fs-5">Número de Cuenta</label>
-                                <input type="text" class="form-control" id="cuenta" required>
+                                <input type="text" class="form-control" id="cuenta" required placeholder="20202020">
                             </div>
                         </div>
                     </div>
@@ -71,7 +70,7 @@
                         <div class="col-md-6">
                             <label for="charla" class="form-label fs-5">Charla</label>
                             <select id="charla" class="form-select form-select-lg mb-3" name="charla" required>
-                                <option selected>Selecciona una charla...</option>
+                                <option selected value="00">Selecciona una charla</option>
                                 <option value="React JS">React JS</option>
                                 <option value="Node JS">Node JS</option>
                                 <option value="Vue JS">Vue JS</option>
@@ -82,7 +81,7 @@
                         <div class="col-md-6">
                             <label for="cupo" class="form-label fs-5">Cupo</label>
                             <select id="cupo" class="form-select form-select-lg mb-3" name="cupo" required>
-                                <option selected class="">Selecciona el cupo máximo</option>
+                                <option selected value="00">Selecciona el cupo máximo</option>
                                 <option value="15">15</option>
                                 <option value="30">30</option>
                                 <option value="45">45</option>
@@ -97,4 +96,76 @@
     </main>
     <script src="./js/app.js"></script>
 </body>
-</html>
+</html> 
+
+
+<!-- <!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Listado de Alumnos</title>
+    <link href="./styles/style.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-light" cz-shortcut-listen="true">
+    <div class="container-fluid">
+        <form id="formularioRegistro" class="bg-white p-4 rounded shadow-sm">
+            <div class="row">
+                <center>
+                    <div class="col-md-6">
+                        <p>Numero 1</p>
+                        <input type="number" id="num1" required>
+                    </div>
+                    <p>Numero 2</p>
+                    <div class="col-md-6">
+                        <input type="number" id="num2" required>
+                    </div>
+                    <div class="col-ms-4">
+
+                    </div>
+                    <br><br>
+                    <button type="submit" class="btn btn-primary">Peruanizar</button>
+                </center>
+            </div>
+        </form>
+    </div>
+    </div>
+    <script>
+        document.getElementById('formularioRegistro').addEventListener('submit', function () {
+            event.preventDefault(); // Evita que el formulario se envíe
+
+            const n1 = document.getElementById('num1').value.trim();            
+            const n2 = document.getElementById('num2').value.trim();
+            console.log("N1= " + n1);
+            console.log("N2= " + n2);
+            console.log("////////////////////////////////////////////////////////////");
+            console.log("Suma de ambos: ");
+            console.log(parseInt(n1) + parseInt(n2));
+
+            console.log("Resta de ambos: ");
+            console.log(parseInt(n1) - parseInt(n2));
+
+            console.log("Multiplicacion de ambos: ");
+            console.log(parseInt(n1) * parseInt(n2));
+
+            console.log("Division de ambos: ");
+            console.log(parseInt(n1) / parseInt(n2));
+            
+            
+            if (parseInt(n1)>parseInt(n2)) 
+            console.log("El numero mayor es: " + n1);
+            else
+            console.log("El numero mayor es: " + n1);
+
+
+            document.getElementById('formularioRegistro').reset();
+
+        });
+
+    </script>
+</body>
+
+</html> -->
