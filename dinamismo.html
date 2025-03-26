@@ -16,16 +16,39 @@
             </div>
         </div>
     </header>
-    <nav class="navbar bg-success-subtle">
-        <a class="navbar-brand" href="#">Dinamismo</a>
-        <ul class="nav navbar-nav">
-          
-        </ul>
-    </nav>
+    <div class="navbar navbar-expand-lg bg-success-subtle row">
+        <a class="col-md-4 navbar-brand" href="#">Dinamismo</a>
+        <nav class="col-md-8 navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#" id="a1">pepe</a></li>
+            <li class="nav-item "><a class="nav-link" href="#" id="a1">pepe</a></li>
+            <li class="nav-item"><a class="nav-link" href="#" id="a1">pepe</a></li>
+            <li class="nav-item"><a class="nav-link" href="#" id="a1">pepe</a></li>
+            <li class="nav-item"><img src="./styles/imgs/edit_ico.png" style="height: 20px; width: 20px;" onclick="edit()"></li>
+        </nav>
+    </div>
     <script>
-        const heading = document.querySelector('h1');
-        console.log(heading);
-        const heading2 = document.querySelector('.tabla_registros h1');
+        // const data= [{linkNombre: "Agregar", link:"agregar.html"}, {linkNombre: "Ver", link:"ver.html"}, {linkNombre: "Nose", link:"nose.html"}]
+        // localStorage.setItem('data', JSON.stringify(data));
+
+        // const data = JSON.parse(localStorage.data);
+        //desactivado temporalemnte por mientras se aplica el edit.html
+        
+        // const heading = document.querySelectorAll('nav li a');
+        // heading[0].textContent=data[0].linkNombre.toString();
+        // heading[1].textContent=data[1].linkNombre.toString();
+        // heading[2].textContent=data[2].linkNombre.toString();
+        // console.log(heading)
+
+        function edit() {
+            //window.location.href= "./edit.html";
+            const data = JSON.parse(localStorage.data);
+
+            const heading = document.querySelectorAll('nav li a');
+            data.forEach((element, i) => {
+                heading[i].textContent=data[i].linkNombre.toString();
+            });
+            //console.log(heading)
+        }
     </script>
 </body>
 </html>
