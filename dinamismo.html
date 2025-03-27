@@ -24,29 +24,30 @@
             <li class="nav-item"><a class="nav-link" href="#" id="a1">pepe</a></li>
             <li class="nav-item"><a class="nav-link" href="#" id="a1">pepe</a></li>
             <li class="nav-item"><img src="./styles/imgs/edit_ico.png" style="height: 20px; width: 20px;" onclick="edit()"></li>
+            <!-- <li class="nav-item">Csrgar<img src="./styles/imgs/edit_ico.png" style="height: 20px; width: 20px;" onclick="loadClear()"></li> -->
         </nav>
     </div>
     <script>
-        // const data= [{linkNombre: "Agregar", link:"agregar.html"}, {linkNombre: "Ver", link:"ver.html"}, {linkNombre: "Nose", link:"nose.html"}]
-        // localStorage.setItem('data', JSON.stringify(data));
+        //en desuso
+        function loadClear() {
+            const data0= [{linkNombre: "Agregar", link:"agregar.html"}, {linkNombre: "Ver", link:"ver.html"}, {linkNombre: "Nose", link:"nose.html"}]
+            localStorage.setItem('data', JSON.stringify(data0));
+        }
+        
 
         // const data = JSON.parse(localStorage.data);
-        //desactivado temporalemnte por mientras se aplica el edit.html
         
-        // const heading = document.querySelectorAll('nav li a');
-        // heading[0].textContent=data[0].linkNombre.toString();
-        // heading[1].textContent=data[1].linkNombre.toString();
-        // heading[2].textContent=data[2].linkNombre.toString();
-        // console.log(heading)
-
-        function edit() {
-            //window.location.href= "./edit.html";
-            const data = JSON.parse(localStorage.data);
+        const data = JSON.parse(localStorage.data);
 
             const heading = document.querySelectorAll('nav li a');
             data.forEach((element, i) => {
                 heading[i].textContent=data[i].linkNombre.toString();
             });
+        // console.log(heading)
+
+        function edit() {
+            window.location.href= "./edit.html";
+            
             //console.log(heading)
         }
     </script>

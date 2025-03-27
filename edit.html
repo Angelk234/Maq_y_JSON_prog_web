@@ -32,22 +32,28 @@
             let info = document.createElement('div');
             let ico = document.createElement('img');
             let p = document.createElement('p');
+            let b = document.createElement('b');
 
             ico.src = "./styles/imgs/edit_ico.png";
             ico.style.width = "30px";
             ico.style.height = "30px";
-            ico.onclick = change(element.linkNombre);
             p.textContent = element.linkNombre;
             info.className="alert alert-info";
 
-            info.appendChild(p);
+            ico.addEventListener('click', function() {
+                let exit = prompt('Escribe el cambio', element.linkNombre);
+                element.linkNombre = exit;
+                p.textContent = element.linkNombre;            
+                localStorage.setItem('data', JSON.stringify(data));
+            });
+
+
+            b.appendChild(p);
+            info.appendChild(b);
             info.appendChild(ico);
             div.appendChild(info);
         });
 
-        function change(normal) {
-            prompt('Escribe el cambio', normal)
-        }
     </script>
 </body>
 </html>
