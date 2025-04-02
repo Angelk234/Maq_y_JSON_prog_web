@@ -1,14 +1,33 @@
 window.addEventListener("load", function () {
-    const div = document.getElementById('pTabla');
 
-    if (localStorage.getItem('panelistas') === null) {
-        const vacio = this.document.createElement('a')
-        vacio.style.fontSize = "40px";
-        vacio.text = "Aún no hay panelistas registrados";
-        div.appendChild(vacio);
+    
+    let nombre = prompt('ingresa tu nombre','N/A');
+    if (nombre === 'Angel'){
+        const div = document.getElementById('pTabla');
+
+        if (localStorage.getItem('panelistas') === null) {
+            const vacio = this.document.createElement('a')
+            vacio.style.fontSize = "40px";
+            vacio.text = "Aún no hay panelistas registrados";
+            div.appendChild(vacio);
+        } else {
+            createTable(div);
+        }
     } else {
-        createTable(div);
+        const div = document.getElementById('pTabla');
+        const vacio = this.document.createElement('a');
+        const img = this.document.createElement('img');
+        img.src = "../imgs/bola-amarilla.jpg";
+        img.style.width = "180px";
+        img.style.height = "180px";
+        vacio.style.fontSize = "40px";
+        vacio.className = "text-danger";
+        vacio.style.textDecoration = "none";
+        vacio.text = "No tienes permiso para entrar";
+        div.appendChild(vacio);
+        div.appendChild(img);
     }
+    
 });
 
 
